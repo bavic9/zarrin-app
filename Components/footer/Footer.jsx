@@ -6,27 +6,27 @@ const Footer = () => {
   return (
     <div>
       <div className='py-32 bg-purple w-full relative'>
-        <div className='hidden md:block absolute z-999 top-[-80px] left-0'>
+        <div className='hidden md:block absolute z-999 -top-20 left-0'>
           <Image src='/Mask1.png' alt='' width={400} height={300} />
         </div>
         <div className='text-center'>
-          <h1 className='text-2xl md:text-3xl lg:text-5xl font-bold font-heading text-white md:w-[45%] w-[80%] m-auto'>Get our stories delivered From us to your inbox weekly.</h1>
+          <h1 className='text-2xl md:text-3xl lg:text-5xl font-bold font-heading text-white md:w-6/12 w-4/5 m-auto'>Get our stories delivered From us to your inbox weekly.</h1>
           <div className='flex gap-3 items-center justify-center my-8'>
             <input
               type="email"
               placeholder="Your Email"
-              className="p-3 md:w-[200px] w-[50%] rounded-lg focus:outline-none"
+              className="p-3 md:w-52 w-1/2 rounded-lg focus:outline-none"
             />
             <button className='text-white w-fit px-8 py-3 text-base font-semibold border border-white rounded-lg transition ease-in-out duration-500'>
               <Link href='/'>Get Started</Link>
             </button>
 
           </div>
-          <p className='text-lg m-auto font-heading text-lightGray md:w-[40%] w-[80%]'>
+          <p className='text-lg m-auto font-heading text-lightGray md:w-2/5 w-1/2'>
             Get a response tomorrow if you submit by 9pm today. If we received after 9pm will get a reponse the following day.
           </p>
         </div>
-        <div className='hidden md:block absolute z-0 -bottom-0 right-0 h-[150px] w-[400px]'>
+        <div className='hidden md:block absolute z-0 -bottom-0 right-0 h-1/3 w-1/3'>
           <Image src='/Mask2.png' alt='' fill />
         </div>
       </div>
@@ -42,7 +42,7 @@ const Footer = () => {
           <Link href='/contact' className='text-base text-center py-2 rounded-md hover:text-purple'>Contact Us</Link>
         </ul>
 
-        <p className='text-gray w-[80%] m-auto text-center font-heading text-lg border-t-2 border-lightGray mt-8 py-10'>
+        <p className='text-gray w-4/5 m-auto text-center font-heading text-lg border-t-2 border-lightGray mt-8 py-10'>
           Copyright &copy; 2025. All Right Reserved
         </p>
       </div>

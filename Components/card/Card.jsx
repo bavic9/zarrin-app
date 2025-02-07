@@ -6,7 +6,7 @@ import React from 'react';
 
 const Card = ({title,description,category,image,id}) => {
   return (
-    <div className='md:w-[32%] md:h-[550px] mb-5 hover:shadow-lg p-4 rounded-xl'>
+    <div className='md:w-1/3 md:h-[520px] mb-5 hover:shadow-lg p-4 rounded-xl'>
       <Link href={`/blog/${id}`} className='relative w-full'>
         <Image src={image} alt='' width={400} height={400} className=' rounded-xl h-[300px]' />
       </Link>

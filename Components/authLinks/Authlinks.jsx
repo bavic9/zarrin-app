@@ -13,7 +13,7 @@ const Authlinks = () => {
                 className="w-8 h-8 mr-5 flex md:hidden justify-between flex-col cursor-pointer "
                 onClick={() => setOpen(!open)}
             >
-                <div className='cursor-pointer w-full h-[40px] relative'>
+                <div className='cursor-pointer w-full h-10 relative'>
                     <Image
                         src='/Menu.png'
                         alt=''
@@ -23,16 +23,16 @@ const Authlinks = () => {
             </div>
 
             {open && (
-                <div className="absolute top-[73px] bg-white left-0 py-10 w-[100vw] flex flex-col items-center justify-center gap-12 text-2xl z-10
+                <div className="absolute top-20 bg-white left-0 py-10 w-screen flex flex-col items-center justify-center gap-12 text-2xl z-10
                 shadow-[0px_10px_10px_rgba(0,0,0,0.3)]
                 ">
                     <Link href='/blog' className='text-lg font-medium w-24 text-center rounded-md hover:text-purple'>Blog</Link>
                     <Link href='/about' className='text-lg w-24 font-medium text-center rounded-md hover:text-purple'>About</Link>
                     <div className='relative block w-full max-w-[53px] ease-in duration-300 overflow-hidden focus-within:max-w-[200px]'>
                         <input
-                            className='block appearance-none w-full bg-[white] text-transparent cursor-pointer transition ease-in duration-150 
-                        p-[5px] rounded-lg border-[none] outline-none placeholder:text-white focus-within:placeholder:text-gray placeholder:text-base 
-                      focus-within:bg-white focus-within:text-gray focus-within:shadow-[inset_0px_0px_10px_rgba(0,0,0,0.1)] focus-within:pr-[50px]'
+                            className='block appearance-none w-full bg-white text-transparent cursor-pointer transition ease-in duration-150 
+                        p-2 rounded-lg border-[none] outline-none placeholder:text-white focus-within:placeholder:text-gray placeholder:text-base 
+                      focus-within:bg-white focus-within:text-gray focus-within:shadow-[inset_0px_0px_10px_rgba(0,0,0,0.1)] focus-within:pr-12'
                             type="text"
                             placeholder='Search here ...'
                         />

@@ -6,3 +6,39 @@
 @tailwind utilities;
 
 
+
+
+
+/* BLOG LIST */
+
+.blogListContainer{
+    display: flex;
+    flex: 1 1 0;
+    padding: 1.25rem  1.25rem 0;
+}
+
+.tableCont{
+    position: relative;
+    height: 80vh;
+    max-width: 850px;
+    overflow-x: auto;
+    margin-top: 16px;
+    border-color: gray;
+}
+
+/* .tableCont{
+    display: none;
+} */
+
+.tableHead{
+    padding: 1.5rem 0.75rem;
+}
+
+
+
+@media (min-width: 640px) { 
+    .blogListContainer{
+        padding-top: 3rem; 
+        padding-left: 4rem; 
+    }
+   }
