@@ -15,7 +15,7 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Your Email"
-              className="p-3 md:w-52 w-1/2 rounded-lg focus:outline-none"
+              className="p-3 md:w-52 w-1/2 rounded-lg bg-white focus:outline-none"
             />
             <button className='text-white w-fit px-8 py-3 text-base font-semibold border border-white rounded-lg transition ease-in-out duration-500'>
               <Link href='/'>Get Started</Link>
