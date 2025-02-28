@@ -16,9 +16,7 @@ const Card = ({title,description,category,image,id}) => {
           <p className='text-gray text-sm'>16 March 2024</p>
         </div>
         <h1 className='font-heading text-xl font-bold mb-5'>{title}</h1>
-        <p className='text-sm text-gray mb-5'>
-          {description}
-        </p>
+        <p className='text-sm text-gray mb-5'  dangerouslySetInnerHTML={{__html:description.slice(0, 120)}} ></p>
         <button className='text-purple pb-3 w-fit underline hover:no-underline text-base font-semibold'>
           <Link href={`/blog/${id}`}>Read more...</Link>
         </button>

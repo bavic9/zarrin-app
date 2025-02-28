@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 
 const BlogPage = () => {
 
+    const [menu, setMenu] = useState('All')
     const [blogs, setBlogs] = useState([]);
 
     const fetchBlogs = async () => {
@@ -28,10 +29,16 @@ const BlogPage = () => {
                 </p>
             </div>
 
+            <div className='flex justify-center gap-6 my-16 text-lg font-heading'>
+                <button onClick={()=>setMenu('All')} className={menu==='All'?'bg-purple text-white py-1 px-4 rounded-sm':''}>All</button>
+                <button onClick={()=>setMenu('Sport')} className={menu==='Sport'?'bg-purple text-white py-1 px-4 rounded-sm':''}>Sport</button>
+                <button onClick={()=>setMenu('Travel')} className={menu==='Travel'?'bg-purple text-white py-1 px-4 rounded-sm':''}>Travel</button>
+                <button onClick={()=>setMenu('Development')} className={menu==='Development'?'bg-purple text-white py-1 px-4 rounded-sm':''}>Development</button>
+            </div>
 
             <div className='md:my-16 flex md:flex-row flex-wrap flex-col items-center justify-between w-[90%] m-auto'>
                 {
-                    blogs.map((item, index) => {
+                    blogs.filter((item)=> menu==='All'?true:item.category===menu).map((item, index) => {
                         return <Card
                             key={index}
                             image={item.image}

@@ -81,9 +81,7 @@ const page = () => {
                     <div className='relative h-[250px] md:h-[350px] w-full md:w-[500px] m-auto my-10'>
                         <Image src={data.image} alt='' fill />
                     </div>
-                    <p className='text-lg text-gray mb-5 m-auto font-semibold'>
-                        {data.description}
-                    </p>
+                    <div className='blog-content text-lg text-gray mb-5 m-auto font-semibold' dangerouslySetInnerHTML={{__html:data.description}} ></div>
                     <p className='text-sm text-gray mb-5 m-auto'>
                         Google has been investing in AI for many years and bringing its benefits to individuals,
                         businesses and communities. Whether it’s publishing state-of-the-art research, building helpful

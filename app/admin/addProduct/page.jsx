@@ -17,7 +17,7 @@ const page = () => {
   const onChangeHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setData(data => ({ ...data, [name]: value }))
+    setData(data => ({ ...data, [name]: value })); 
     console.log(data);
   }
 
@@ -26,6 +26,7 @@ const page = () => {
     const formData = new FormData();
     formData.append('title', data.title);
     formData.append('description', data.description);
+    formData.append('category', data.category);
     formData.append('image', image);
     const response = await axios.post('/api/blog', formData);
     if (response.data.success) {

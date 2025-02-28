@@ -8,6 +8,7 @@ import axios from 'axios';
 
 const CardList = () => {
 
+
     const [blogs, setBlogs] = useState([]);
 
     const fetchBlogs = async () => {
@@ -19,7 +20,7 @@ const CardList = () => {
 
     useEffect(() => {
         fetchBlogs();
-    },[])
+    }, [])
 
     return (
         <div className='w-11/12 m-auto md:mt-52 md:mb-20'>
@@ -78,9 +79,23 @@ const CardList = () => {
                         <Link href='/blog'>View All</Link>
                     </button>
                 </div>
-                <div className='md:my-16 flex md:flex-row flex-wrap flex-col items-center justify-between'>
+                <div className='md:my-16 hidden md:flex md:flex-row flex-wrap flex-col items-center justify-between'>
                     {
-                        blogs.map((item, index) => {
+                        blogs.slice(0, 9).map((item, index) => {
+                            return <Card
+                                key={index}
+                                image={item.image}
+                                title={item.title}
+                                description={item.description}
+                                id={item._id}
+                                category={item.category}
+                            />
+                        })
+                    }
+                </div>
+                <div className='md:my-16 flex md:hidden flex-wrap flex-col items-center justify-between'>
+                    {
+                        blogs.slice(3, 9).map((item, index) => {
                             return <Card
                                 key={index}
                                 image={item.image}

@@ -1,8 +1,28 @@
+'use client'
+import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const Footer = () => {
+
+  const [email, setEmail] = useState('')
+
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('email',email);
+    const response = await axios.post('/api/email',formData);
+    if (response.data.success){
+      toast.success(response.data.msg);
+      setEmail('');
+    }
+    else{
+      toast.error('Error')
+    }
+  }
+
   return (
     <div>
       <div className='py-32 bg-purple w-full relative'>
@@ -11,17 +31,18 @@ const Footer = () => {
         </div>
         <div className='text-center'>
           <h1 className='text-2xl md:text-3xl lg:text-5xl font-bold font-heading text-white md:w-6/12 w-4/5 m-auto'>Get our stories delivered From us to your inbox weekly.</h1>
-          <div className='flex gap-3 items-center justify-center my-8'>
+          <form onSubmit={onSubmitHandler} className='flex gap-3 items-center justify-center my-8'>
             <input
               type="email"
               placeholder="Your Email"
-              className="p-3 md:w-52 w-1/2 rounded-lg bg-white focus:outline-none"
+              onChange={(e)=>setEmail(e.target.value)}
+              value={email}
+              className="p-3 md:w-52 w-1/2 rounded-lg bg-purple text-white border focus:outline-none"
             />
-            <button className='text-white w-fit px-8 py-3 text-base font-semibold border border-white rounded-lg transition ease-in-out duration-500'>
-              <Link href='/'>Get Started</Link>
+            <button type='submit' className='text-purple w-fit px-8 py-3 text-base font-semibold border border-white bg-white rounded-lg transition ease-in-out duration-500 hover:bg-purple hover:text-white hover:border-white hover:shadow-sm'>
+              Get Started
             </button>
-
-          </div>
+          </form>
           <p className='text-lg m-auto font-heading text-lightGray md:w-2/5 w-1/2'>
             Get a response tomorrow if you submit by 9pm today. If we received after 9pm will get a reponse the following day.
           </p>

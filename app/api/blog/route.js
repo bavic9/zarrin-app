@@ -4,6 +4,7 @@ import BlogModel from "@/lib/models/BlogModels";
 import {writeFile} from 'fs/promises'
 // import Cors from 'cors'
 import { NextResponse } from 'next/server';
+const fs = require('fs')
 
 
 
@@ -80,4 +81,14 @@ export async function POST(request) {
         console.error('Error saving blog:', error);
         return NextResponse.json({ success: false, msg: 'Failed to add blog', error: error.message });
     }
+}
+
+//api endpoint to delete blog
+
+export async function DELETE(request) {
+    const id = await request.nextUrl.searchParams.get('id');
+    const blog = await BlogModel.findById(id);
+    fs.unlink(`./public${blog.image}`,()=>{});
+    await BlogModel.findByIdAndDelete(id);
+    return NextResponse.json({msg:'Blog Deleted'})
 }
